@@ -13,8 +13,8 @@ before(async function () {
 
   global.nftDeployed = await nft.deploy();
 
-  const signers: any = [];
-  const stakeSigners: any = [];
+  const signers: Contract[] = [];
+  
   //loop here number of wallets you want to mint
   for (let i = 0; i < 1000; i++) {
     let wallet = ethers.Wallet.createRandom();

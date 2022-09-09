@@ -19,6 +19,7 @@ before(async function () {
   for (let i = 0; i < 1000; i++) {
     let wallet = ethers.Wallet.createRandom();
     let walletConnected = wallet.connect(ethers.provider);
+    //Give wallet 0.5 eth so it can do all the things it needs.
     await owner.sendTransaction({ to: wallet.address, value: ethers.utils.parseEther("0.5") });
     const newConnection = await global.nftDeployed.connect(walletConnected);
     signers.push(newConnection);
